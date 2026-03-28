@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidroenergía - Transición Energética Justa</title>
+<link rel="icon" href="logo.jpg" type="image/png">
+<!-- FUENTE MODERNA INTER -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="estilos.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg nav-clean fixed-top">
+  <div class="container">
+    <a class="navbar-brand">💧 Hidroenergía</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" onclick="showSection('historia')">Historia</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="showSection('colombia')">Colombia</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="showSection('impacto')">Impacto</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="showSection('datos')">Datos</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="showSection('dashboard')">Dashboard</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>💧 Hidroenergía</h1>
+  <p>Energía limpia del agua · La renovable más importante del mundo</p>
+</header>
+
+<!-- HISTORIA -->
+<section id="historia" class="container section tab active">
+  <h2>🌍 Historia de la Hidroenergía</h2>
+  <div class="glass">
+    <h3>💧 ¿Por qué se empezó a usar la hidroenergía?</h3>
+    <p>La hidroenergía nace de la necesidad del ser humano de aprovechar la fuerza del agua como fuente de energía. Desde civilizaciones antiguas ya se utilizaban ruedas hidráulicas para mover maquinaria y moler grano. Con la Revolución Industrial, se buscó producir electricidad de forma más eficiente, dando origen a las primeras hidroeléctricas.</p>
+    <hr>
+    <h3>⚡ ¿Quién creó la primera hidroeléctrica?</h3>
+    <p>La primera central hidroeléctrica del mundo fue construida en 1882 en Appleton, Wisconsin (EE.UU.). Fue impulsada por sistemas desarrollados en la era de Thomas Edison. Su objetivo era generar electricidad para iluminar una fábrica de papel.</p>
+    <hr>
+    <h3>🌎 Motivo principal</h3>
+    <p>Se buscaba una fuente de energía constante, renovable y más barata que el carbón.</p>
+    <hr>
+    <h3>📈 Eventos importantes</h3>
+    <ul>
+      <li>1882: Primera hidroeléctrica en EE.UU.</li>
+      <li>1895: Niagara Falls inicia generación a gran escala</li>
+      <li>1900-1930: Expansión mundial</li>
+      <li>1940-1970: Megaproyectos como Hoover Dam</li>
+      <li>2000+: enfoque en sostenibilidad</li>
+    </ul>
+    <hr>
+    <h3>🌊 Importancia actual</h3>
+    <p>Hoy es una de las fuentes renovables más importantes del mundo, reduciendo emisiones y aportando energía limpia. A nivel mundial, la hidroenergía representa aproximadamente el <strong>16% de la generación eléctrica</strong> y en Colombia supera el <strong>70%</strong>.</p>
+  </div>
+</section>
+
+<!-- COLOMBIA -->
+<section id="colombia" class="container section tab">
+  <h2>⚡ Hidroenergía en Colombia</h2>
+  <div class="glass">
+    <p>Colombia depende fuertemente de la energía hidroeléctrica. Aproximadamente el <strong class="text-primary">70% de la energía eléctrica</strong> del país proviene de fuentes hidráulicas, lo que la convierte en una de las matrices más limpias de la región.</p>
+    <p><strong>Capacidad instalada hidroeléctrica en Colombia:</strong> ~12,000 MW</p>
+  </div>
+  
+  <h3 class="mt-4 text-center">🏭 Principales hidroeléctricas de Colombia</h3>
+  
+  <div class="botones-hidro">
+    <div class="mini-boton" onclick="showPlant('ituango')">💧 Hidroituango</div>
+    <div class="mini-boton" onclick="showPlant('guatape')">💧 Guatapé</div>
+    <div class="mini-boton" onclick="showPlant('chivor')">💧 Chivor</div>
+    <div class="mini-boton" onclick="showPlant('sancarlos')">💧 San Carlos</div>
+    <div class="mini-boton" onclick="showPlant('betania')">💧 Betania</div>
+    <div class="mini-boton" onclick="showPlant('porce')">💧 Porce III</div>
+  </div>
+  
+  <div id="plantInfo" class="glass mt-4">
+    <p class="text-center">Selecciona una hidroeléctrica para ver su información ⚡</p>
+  </div>
+</section>
+
+<!-- IMPACTO -->
+<section id="impacto" class="container section tab">
+  <h2>🌱⚠️ Impacto ambiental de la hidroenergía</h2>
+  <div class="glass">
+    <details>
+      <summary>🌊 ¿Por qué ocurren desbordamientos?</summary>
+      <p>Lluvias intensas y saturación de embalses. El cambio climático aumenta la frecuencia de fenómenos extremos, lo que requiere sistemas de alerta temprana y gestión adecuada de niveles.</p>
+    </details>
+    <details>
+      <summary>⚠️ Hidroeléctricas y caudal</summary>
+      <p>Las represas modifican el flujo natural del agua, afectando ecosistemas río abajo y comunidades que dependen del río. Es fundamental mantener caudales ecológicos.</p>
+    </details>
+    <details>
+      <summary>🌿 Importancia de no desviar cauces</summary>
+      <p>Evita erosión, pérdida de biodiversidad y desplazamiento de comunidades. Las mejores prácticas incluyen hidroeléctricas de pasada que no almacenan grandes volúmenes.</p>
+    </details>
+    <details>
+      <summary>🌍 Desastres ambientales en Colombia</summary>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <div style="flex: 1;">
+          <ul>
+            <li><strong>Hidroituango (2018)</strong> - Emergencia por deslizamientos y túneles en riesgo</li>
+            <li><strong>La Mojana (2021-2022)</strong> - Crisis por niveles históricos del río Cauca</li>
+            <li><strong>Córdoba (2023-2024)</strong> - Inundaciones por desbordamiento de represas</li>
+          </ul>
+        </div>
+        <div style="flex-shrink: 0;">
+          <img src="imagenes/cordoba.jpg" alt="Desastres ambientales Colombia" style="
+            width: 320px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+          ">
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>🔧 Soluciones sostenibles</summary>
+      <p>Monitoreo constante, sistemas de alerta temprana, protección de cuencas hidrográficas, participación comunitaria y planes de compensación ambiental.</p>
+    </details>
+    <details>
+      <summary>⚖️ Conclusión</summary>
+      <p>La hidroenergía es sostenible si se gestiona correctamente, con estudios de impacto ambiental rigurosos y compensaciones justas para comunidades afectadas.</p>
+    </details>
+  </div>
+</section>
+
+<!-- DATOS -->
+<section id="datos" class="container section tab">
+  <h2>📊 Datos Históricos - Hidroenergía Mundial (1965-2022)</h2>
+  
+  <div class="glass">
+    <h3>💧 Evolución de la hidroenergía por país</h3>
+    
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <label for="paisSelector" class="form-label fw-bold">🌎 Selecciona un país:</label>
+        <select id="paisSelector" class="form-select" onchange="cargarDatosPais()">
+          <option value="">Cargando países...</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label fw-bold">📅 Periodo: 1965 - 2022</label>
+        <p class="text-muted">Datos de consumo hidroeléctrico y participación en electricidad</p>
+      </div>
+    </div>
+    
+    <div class="table-responsive">
+      <table class="table table-striped table-hover" id="dataTable">
+        <thead class="table-primary">
+          32
+            <th>Año</th>
+            <th>Consumo Hidroeléctrico (TWh)</th>
+            <th>% Hidro en Electricidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="3" class="text-center">Selecciona un país para ver los datos</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <small class="text-muted">* Datos basados en: 05 hydropower-consumption.csv y 07 share-electricity-hydro.csv</small>
+  </div>
+
+  <div class="glass mt-4">
+    <h3>💧 Calculadora de Energía Hidroeléctrica</h3>
+    <p>Ingresa tu consumo eléctrico mensual (kWh) y te mostraremos cuánta energía hidroeléctrica se necesitaría para cubrirlo según diferentes escenarios.</p>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <label for="consumoInput" class="form-label fw-bold">Consumo eléctrico mensual (kWh):</label>
+        <input type="number" class="form-control" id="consumoInput" placeholder="Ej: 200 kWh">
+        <button class="btn btn-primary mt-3" onclick="calcularHidroenergia()">💧 Calcular con hidroenergía</button>
+      </div>
+      <div class="col-md-6">
+        <div id="resultadoCalculadora" class="alert alert-info">
+          Ingresa tu consumo para calcular
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="container section tab">
+  <h2>📈 Dashboard - Hidroenergía en el mundo (1965-2022)</h2>
+  
+  <div class="dashboard-container">
+    <div class="dashboard-row">
+      <div class="dashboard-card">
+        <div class="chart-box">
+          <canvas id="barChart"></canvas>
+        </div>
+        <p class="chart-caption"><strong>📊 Producción por Fuente Renovable (TWh - 2022)</strong><br><span class="text-primary">💧 Hidroenergía: 4,280 TWh</span></p>
+      </div>
+      <div class="dashboard-card">
+        <div class="chart-box">
+          <canvas id="pieChart"></canvas>
+        </div>
+        <p class="chart-caption"><strong>🥧 Participación en generación eléctrica mundial</strong><br><span class="text-primary">💧 Hidroenergía: 16.2%</span></p>
+      </div>
+    </div>
+    
+    <div class="dashboard-row">
+      <div class="dashboard-card">
+        <div class="chart-box">
+          <canvas id="lineChart"></canvas>
+        </div>
+        <p class="chart-caption"><strong>📈 Tendencia capacidad hidroeléctrica instalada (GW)</strong><br><span class="text-primary">💧 210 GW (1965) → 1,410 GW (2022)</span></p>
+      </div>
+      <div class="dashboard-card">
+        <div class="chart-box">
+          <canvas id="areaChart"></canvas>
+        </div>
+        <p class="chart-caption"><strong>📉 Hidroenergía vs Otras Renovables vs Convencional</strong><br><span class="text-primary">💧 Líder en renovables desde 1965</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  💧 Proyecto Final - HidroEnergia - Bootcamp De Programación 2026
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
